@@ -1,4 +1,5 @@
-<%@ page import="java.util.HashMap" %><%--
+<%@ page import="java.util.HashMap" %>
+<%@ page import="com.toavina.WebFramework.model.Employer" %><%--
   Created by IntelliJ IDEA.
   User: hp
   Date: 24/08/2021
@@ -7,13 +8,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String text = (String) application.getAttribute("SayHiValue");
+    Object[] listEmp = (Object[]) application.getAttribute("empList");
 %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-  <p><%= text %></p>
+  <% for(Object obj: listEmp){ %>
+        <% Employer emp = (Employer) obj; %>
+        <p><%= emp.getNom()%></p>
+        <p><%= emp.getPrenom()%></p>
+    <% } %>
 </body>
 </html>

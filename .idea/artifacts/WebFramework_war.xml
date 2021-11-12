@@ -3,12 +3,25 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
+        <exploded>false</exploded>
         <module>WebFramework</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="archive" name="WebFramework-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="WebFramework:war exploded" />
+      <element id="archive" name="wedFramework.0-1-0.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="archive" name="webFramework.0-1-1.jar">
+          <element id="directory" name="META-INF">
+            <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+          </element>
+        </element>
+      </element>
+      <element id="artifact" artifact-name="WebFramework_0-1-1_jar" />
     </root>
   </artifact>
 </component>
