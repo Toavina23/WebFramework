@@ -1,6 +1,6 @@
 package com.toavina.WebFramework.model;
 
-import com.toavina.dataaccessframework.db.Mere;
+import com.toavina.WebFramework.dao.model.Mere;
 
 public class Employer extends Mere {
     String id="";

@@ -213,22 +213,12 @@ public class ClassLib {
         return false;
     }
 
-    public static UrlMappingModel findMatchingUrl(String url, String packageName) throws IOException, ClassNotFoundException {
-        Class[] controllers = getClasses(packageName);
-        UrlMappingModel[] dataUrls = getAnnotations(controllers);
+    public static UrlMappingModel findMatchingUrl(String url, String packageName, Class[] storedClass) throws IOException, ClassNotFoundException {
+        if(storedClass == null) throw new UnsupportedOperationException();
+        UrlMappingModel[] dataUrls = getAnnotations(storedClass);
         for(UrlMappingModel urlMappingModel: dataUrls){
             if(urlMappingModel.getUrl().equals(url)) return urlMappingModel;
         }
         return null;
-    }
-
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Class[] listClass = ClassLib.getClasses("com.toavina.WebFramework.controller");
-        UrlMappingModel[] dataUrls = ClassLib.getAnnotations(listClass);
-        for(UrlMappingModel url: dataUrls){
-            System.out.println(url.getUrl());
-            System.out.println(url.getView());
-            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxx");
-        }
     }
 }

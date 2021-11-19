@@ -10,10 +10,10 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 
-<form action="${pageContext.request.contextPath}/request/put/test-ajouter" method="post">
-    <input type="text" name="test.nom">
-    <input type="text" name="test.prenom">
-    <input type="text" name="test.age">
+<form action="${pageContext.request.contextPath}/request/form/ajoutPersonne" method="post">
+    <input type="text" name="personne.nom">
+    <input type="text" name="personne.prenom">
+    <input type="text" name="personne.age">
     <button type="submit">Valider</button>
 </form>
 

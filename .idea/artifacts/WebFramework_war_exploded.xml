@@ -6,7 +6,6 @@
         <exploded>true</exploded>
         <module>WebFramework</module>
         <packaging>war</packaging>
-        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -14,7 +13,6 @@
         <element id="directory" name="classes">
           <element id="module-output" name="WebFramework" />
         </element>
-        <element id="archive" name="WebFramework.jar" />
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/WebFramework-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
